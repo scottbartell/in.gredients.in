@@ -11,6 +11,10 @@ development:
   <<: *defaults
   database: gredients_development
 
+production:
+  <<: *defaults
+  database: gredients_production
+
 test:
   <<: *defaults
   database: gredients_test
