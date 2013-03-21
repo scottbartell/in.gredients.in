@@ -6,7 +6,6 @@ defaults: &defaults
   port: 5432
   username: postgres
   password: postgres
-  template: template0
 
 development:
   <<: *defaults
