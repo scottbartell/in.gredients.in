@@ -1,0 +1,90 @@
+<style>
+ul.tagit {
+    font-family: 'Open Sans', sans-serif;
+    padding: 1px 5px;
+    overflow: auto;
+    margin-left: inherit; /* usually we don't want the regular ul margins. */
+    margin-right: inherit;
+}
+ul.tagit li {
+    display: block;
+    float: left;
+    margin: 0;
+}
+ul.tagit li.tagit-choice {    
+    position: relative;
+    line-height: inherit;
+}
+
+ul.tagit li.tagit-choice-read-only { 
+    padding: .2em .5em .2em .5em; 
+} 
+
+ul.tagit li.tagit-choice-editable { 
+    padding: .2em 18px .2em .5em;
+    margin-right: 5px;
+} 
+
+ul.tagit li.tagit-new {
+    padding: .25em 4px .25em 0;
+    width: 100px;
+}
+
+ul.tagit li.tagit-choice a.tagit-label {
+    cursor: pointer;
+    text-decoration: none;
+}
+ul.tagit li.tagit-choice .tagit-close {
+    cursor: pointer;
+    position: absolute;
+    right: .1em;
+    top: 50%;
+    margin-top: -8px;
+    line-height: 17px;
+}
+
+/* used for some custom themes that don't need image icons */
+ul.tagit li.tagit-choice .tagit-close .text-icon {
+    display: none;
+}
+
+ul.tagit li.tagit-choice input {
+    display: block;
+    float: left;
+    margin: 2px 5px 2px 0;
+}
+ul.tagit input[type="text"] {
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+    outline: none;
+}
+.ui-widget-content {
+opacity: .8!important;
+}
+</style>
+<script>
+
+ $(function(){
+            var sampleTags = ["peanut", "rice", "rutabaga", "pectin", "gelatine", "strawberries", "coconut", "mussel", "tamarind", "yogurt", "salmon", "half and half", "eggs", "beef steak", "asparagus", "almond", "potato", "celery", "vinegar", "bell pepper", "beef broth", "green beans", "honey", "baking soda", "coffee", "lavender", "banana", "mint", "vegetable oil", "tomato", "pumpkin seeds", "pepperoni", "edamame", "sugar", "bread", "whole chicken", "garlic powder", "pumpkin", "collard", "onion", "chicken wings", "pork chops", "broccoli rabe", "duck", "champagne", "butter", "zucchini", "cornmeal", "peppercorn", "chili pepper", "croissants", "flour", "ground beef", "tortillas", "lemon", "marshmallow", "salami", "berries", "cashew", "date", "pork ribs", "turkey liver", "parmesan", "red onion", "raspberries", "angel food", "brown sugar", "tea", "bread dough", "condensed milk", "chocolate", "semolina", "orange", "butternut squash", "cream", "lime", "cantaloupe", "corn", "tofu", "cream cheese", "pita", "polenta", "cabbage", "lamb chops", "bacon", "blackberries", "chicory", "apricot jam", "jicama", "popcorn", "porcini", "lobster", "ginger", "beans", "buckwheat", "filo dough", "pomegranate seed", "taro roots", "vermicelli", "sausage", "mushroom", "taco seasoning", "margarine", "pudding mix", "cornbread", "candy", "grape", "wafer", "cinnamon", "mango", "avocado", "coconut oil", "rolled oats", "plantain", "seaweed", "cake mix", "cucumber", "balsamic vinegar", "sweet potato", "soybeans", "basil", "apricot", "barley", "sesame seed", "kiwi", "wheat", "fruit juice", "pork shoulder", "cookie dough", "dark chocolate", "pineapple", "blueberries", "confectioners sugar", "lemon verbena", "salmon skin", "veal", "cayenne", "turkey", "beef brisket", "bittersweet chocolate", "passion fruit", "garlic", "green tea", "salad greens", "white chocolate", "prosciutto", "beet", "grits", "couscous", "pizza dough", "squash", "cherry", "persimmons", "ham", "asiago", "clam", "leg of lamb", "kale", "lard", "chestnut", "soy beans", "peas", "tarragon", "cumin", "rosemary", "olive oil", "goat cheese", "goose", "cherry jam", "brandy", "baguette", "sunflower seed", "lychee", "pear", "carrot", "hard cheese", "chorizo", "chocolate milk", "watermelon", "pasta", "quinoa", "flax", "frosting", "cider vinegar", "cheddar", "powdered milk", "yam", "crab", "chicken breast", "grapefruit", "corn syrup", "lentil", "cornflour", "apple", "cauliflower", "evaporated milk", "canola oil", "sesame oil", "whiskey", "bloody mary", "millet", "french fries", "catfish", "cocoa", "lemonade", "peach", "pecan", "mozzarella", "cookies", "broccoli", "cranberries", "pie crust", "breadsticks", "cranberry juice", "lima beans", "cereal", "jerusalem artichoke", "italian sausage", "artichoke", "pimiento", "chard", "snow peas", "saffron", "meringue", "pork", "puff pastry", "raspberry jam", "sherry", "shrimp", "trout", "epazote", "sea bass", "fondant", "flower", "maple syrup", "creme de cassis", "apple cider", "brussel sprout", "chicken broth", "camembert cheese", "pine nut", "bok choy", "veal chops", "pheasant", "beer", "polish sausage", "spinach", "pate", "chipotle", "cilantro", "hearts of palm", "lamb", "vinaigrette dressing", "macaroni cheese mix", "chicken thighs", "hot dog", "rye", "glycerin", "tapioca", "pomegranate", "pistachio", "sorghum", "macadamia", "soft cheese", "peanut butter", "biscuits", "liquid smoke", "kelp", "mustard", "vodka", "syrup", "pancake mix", "apple juice", "pork roast", "gin", "herbes de provence", "espresso", "papaya", "chickpea", "liqueur", "chicken roast", "oxtail", "oyster", "rice flour", "red pepper flake", "chicken giblets", "ricotta", "plum", "kool aid", "buttermilk", "celery seed", "beef liver", "noodle", "coke", "bay leaf", "radish", "salsa", "ice cream", "caramel", "mayonnaise", "peanut oil", "cranberry sauce", "italian dressing", "ketchup", "pretzel", "orange juice", "vanilla", "ciclon", "milk", "chocolate pudding", "yeast", "sourdough starter", "creme fraiche", "whipped cream", "pie filling", "cooking spray", "shortening", "graham cracker", "rum", "maraschino", "custard", "barbecue sauce", "beef ribs", "hoisin sauce", "caraway", "mixed vegetable", "moose", "white wine", "fish fillets", "kaffir lime leaves", "creme de menthe", "grenadine", "self rising flour", "club soda", "rice vinegar", "corn oil", "kumquat", "shallot", "parsley", "havarti cheese", "annatto", "sauerkraut", "salad dressing", "chutney", "artificial sweetener", "sorbet", "strawberry jam", "okra", "food coloring", "pickle", "borax", "aloe vera", "turmeric", "lemon balm", "chocolate syrup", "molasses", "sweet corn", "nuts", "tortilla chip", "velveeta", "ginger ale", "saltines", "frangelico", "eggnog", "nutella", "chili beans", "sour cream", "cottage cheese", "wasabi", "wine vinegar", "thyme", "onion powder", "hot sauce", "bisquick", "hazelnut", "herbs", "brownie mix", "chocolate morsels", "apple sauce", "coconut milk", "chocolate cookies", "canned tuna", "walnut", "mushroom soup", "italian seasoning", "venison", "ranch dressing", "tomatoe sauce", "ground lamb", "bouillon", "sprite", "coriander", "soy sauce", "clove", "baking powder", "fig", "cracker", "bread crumbs", "banana pepper", "chili powder", "pesto", "onion soup", "allspice", "yeast flake", "ground turkey", "paprika", "fish sauce", "steak seasoning", "chocolate powder", "angel hair", "jello", "cornstarch"];
+
+            //-------------------------------
+            // Single field
+            //-------------------------------
+            $('#search-bar-tags').tagit({
+                availableTags: sampleTags,
+                // This will make Tag-it submit a single form value, as a comma-delimited field.
+                singleField: true,
+                singleFieldNode: $('#search-bar')
+            });
+ });
+</script>

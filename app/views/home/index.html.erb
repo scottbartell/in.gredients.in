@@ -1,0 +1,27 @@
+<section id="top" <% if params[:q].present? %>class="small"<% end %>>
+  <div id="logo">in.gredients.in</div>
+
+  <div id="search">
+    <form class="clearfix">
+      <input id="search-bar" name="q" <% if params[:q].present? %> value="<%= params[:q] %>" <% end %> autofocus style="display:none" placeholder="What are the ingredients?">
+      <ul id="search-bar-tags"></ul>
+      <button id="search-btn" type="submit"><i class="icon-search"></i></button>
+    </form>
+  </div>
+</section
+
+<section id="results">
+  <ul class='recipes'>
+    <% if @recipes.present? %>
+      <% @recipes.each do |recipe| %>
+        <ul class='recipe'>
+          <li class='recipe-title'><a href='<%= recipe['href'] %>'><%= recipe['title'] %></a></li>
+          <li class='recipe-thumbnail'><img src='<%= recipe['thumbnail'] %>' alt='<%= recipe['title'] %> image'></li>
+          <li class='recipe-ingredients'><b>Ingredients</b>: <i><%= recipe['ingredients'] %></i></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </ul>
+</section>
+
+<%= render 'autocomplete_js' %>

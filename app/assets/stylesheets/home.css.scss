@@ -1,0 +1,98 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "font-awesome";
+
+* {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Open Sans', sans-serif;
+  color: #59685b;
+}
+  
+html {
+  min-height: 100%;
+  background-color: #dde4de;
+  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+}
+  
+#logo {
+  font-family: 'Lobster', cursive;
+  font-size: 75px;
+  margin: 150px auto 50px;
+  text-align: center;
+  color: #8fa793;
+}
+  
+#search {
+  width: 410px;
+  margin: auto;
+}
+
+#search-bar-tags{
+  /*background-color: #dde4de;*/
+  opacity: .9;
+  padding: 4px 6px 5px 6px;
+  width: 350px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid #8fa793;
+  border-radius: 3px 0 0 3px;
+  float: left;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+#search-btn{
+  background-color: #8fa793;
+  border-radius: 0 3px 3px 0;
+  float: left;
+  font-size: 25px;
+  padding: 5px 12px 9px 11px;
+  border: none;
+  margin: 0;
+}
+
+#search-btn:hover{
+  cursor: pointer;
+}
+
+.ui-widget-content {
+  opacity: .4;
+}
+
+.ui-menu {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#search-btn:focus {
+  outline:none;
+}
+
+
+.small {
+  #logo {
+    font-size: 65px;
+    margin: 10px auto 20px;
+  }
+  #search-btn {
+    font-size: 22px;
+  }
+  #search-bar-tags {
+    font-size: 18px;
+  }
+}
+
+.recipe-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+ul.recipe {
+  list-style-type: none;
+  width: 400px;
+  margin: 0px auto;
+  padding: 10px;
+}
