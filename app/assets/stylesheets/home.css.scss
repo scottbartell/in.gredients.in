@@ -16,13 +16,23 @@ html {
 }
   
 #logo {
-  font-family: 'Lobster', cursive;
   font-size: 75px;
   margin: 150px auto 50px;
   text-align: center;
   color: #8fa793;
+  opacity: .9;
 }
-  
+
+#logo:hover {
+  opacity: 1;
+}
+
+#logo a {
+  font-family: 'Lobster', cursive;
+  text-decoration: none;
+  color: #8fa793;
+}
+ 
 #search {
   width: 410px;
   margin: auto;
