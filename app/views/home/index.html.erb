@@ -1,5 +1,5 @@
 <section id="top" <% if params[:q].present? %>class="small"<% end %>>
-  <div id="logo">in.gredients.in</div>
+  <div id="logo"><a href="http://in.gredients.in">in.gredients.in</a></div>
 
   <div id="search">
     <form class="clearfix">
@@ -11,13 +11,13 @@
 </section
 
 <section id="results">
-  <ul class='recipes'>
+  <ul class="recipes">
     <% if @recipes.present? %>
       <% @recipes.each do |recipe| %>
-        <ul class='recipe'>
-          <li class='recipe-title'><a href='<%= recipe['href'] %>'><%= recipe['title'] %></a></li>
-          <li class='recipe-thumbnail'><img src='<%= recipe['thumbnail'] %>' alt='<%= recipe['title'] %> image'></li>
-          <li class='recipe-ingredients'><b>Ingredients</b>: <i><%= recipe['ingredients'] %></i></li>
+        <ul class="recipe">
+          <li class="recipe-title"><a href="<%= recipe['href'] %>"><%= recipe['title'] %></a></li>
+          <li class="recipe-thumbnail"><img src="<%= recipe['thumbnail'] %>" alt="<%= recipe['title'] %> image"></li>
+          <li class="recipe-ingredients"><b>Ingredients</b>: <i><%= recipe['ingredients'] %></i></li>
         </ul>
       <% end %>
     <% end %>
