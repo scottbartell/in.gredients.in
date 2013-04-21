@@ -27,5 +27,4 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'asset_sync'
 end

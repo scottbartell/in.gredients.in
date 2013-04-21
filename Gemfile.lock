@@ -26,9 +26,6 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.33)
     arel (4.0.0.beta1)
-    asset_sync (0.5.4)
-      activemodel
-      fog
     atomic (1.0.1)
     builder (3.1.4)
     capistrano (2.14.2)
@@ -158,7 +155,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  asset_sync
   capistrano
   coffee-rails (~> 4.0.0.beta1)
   font-awesome-sass-rails
