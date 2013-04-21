@@ -17,3 +17,4 @@
 
 # Ignore test files
 /spec/*
+.DS_Store
