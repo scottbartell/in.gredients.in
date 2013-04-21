@@ -15,9 +15,9 @@
     <% if @recipes.present? %>
       <% @recipes.each do |recipe| %>
         <ul class="recipe">
-          <li class="recipe-title"><a href="<%= recipe['href'] %>"><%= recipe['title'] %></a></li>
-          <li class="recipe-thumbnail"><img src="<%= recipe['thumbnail'] %>" alt="<%= recipe['title'] %> image"></li>
-          <li class="recipe-ingredients"><b>Ingredients</b>: <i><%= recipe['ingredients'] %></i></li>
+          <li class="recipe-title"><%= link_to title(recipe.name), recipe %></a></li>
+          <li class="recipe-thumbnail"><%= square_image recipe.image_name %></li>
+          <li class="recipe-ingredients"><b>Ingredients</b>: <i><%= ingredient_list recipe.ingredients %></i></li>
         </ul>
       <% end %>
     <% end %>
