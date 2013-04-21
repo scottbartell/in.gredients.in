@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <strong>Permalink:</strong>
+  <%= @recipe.permalink %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @recipe.image_name %>
+</p>
+
+<p>
+  <strong>Base rating:</strong>
+  <%= @recipe.base_rating %>
+</p>
+
+<p>
+  <strong>Source url:</strong>
+  <%= @recipe.source_url %>
+</p>
+
+<%= link_to 'Back', recipes_path %>
