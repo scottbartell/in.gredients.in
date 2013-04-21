@@ -11,14 +11,13 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'recipe_puppy'
 gem 'nokogiri'
 
-# Gems used only for assets and not required
-# in production environments by default.
+gem 'font-awesome-sass-rails'
+
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'
   gem 'coffee-rails', '~> 4.0.0.beta1'
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
-  gem 'font-awesome-sass-rails'
 end
 
 group :development do
