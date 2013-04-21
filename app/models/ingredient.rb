@@ -2,6 +2,9 @@ class Ingredient < ActiveRecord::Base
   belongs_to :recipe
   belongs_to :item
 end
+
+  validates_presence_of :name, :item, :recipe_id, :item_id
+
   after_initialize :copy_item
 
   private
