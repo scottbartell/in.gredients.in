@@ -4,4 +4,8 @@ class Item < ActiveRecord::Base
 
   validates_presence_of :name
 
+  def recipes
+    Ingredient.where(item: self).map{|i| i.recipe}
+  end
+
 end
