@@ -2,14 +2,25 @@
 <html>
 <head>
   <title>in.gredients.in</title>
-  <link href='http://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Condiment|Oxygen' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<section id="top" <% if params[:q].present? || controller.controller_name != "home" %>class="small"<% end %>>
+  <div id="logo"><a href="http://in.gredients.in">in.gredients.in</a></div>
 
+  <% if controller.controller_name == "home" %>
+  <div id="search">
+    <form class="clearfix">
+      <input id="search-bar" name="q" <% if params[:q].present? %> value="<%= params[:q] %>" <% else %> autofocus <% end %> placeholder="What are the ingredients?">
+      <button id="search-btn" type="submit"><i class="icon-search"></i></button>
+    </form>
+  </div>
+  <% end %>
+</section>
 <%= yield %>
 
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>
