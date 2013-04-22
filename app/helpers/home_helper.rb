@@ -4,7 +4,7 @@ module HomeHelper
   end
 
   def ingredient_list ingredients
-    ingredients.map{|c| c.name.titleize}.to_sentence.truncate(50)
+    ingredients.map{|c| c.name.titleize}.to_sentence.truncate(75)
   end
 
   def square_image image_name

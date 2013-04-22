@@ -2,11 +2,13 @@
   <% if @recipes.present? %>
   <ul class="recipes">
     <% @recipes.each do |recipe| %>
-      <ul class="recipe">
-        <li class="recipe-thumbnail"><%= square_image recipe.image_name %></li>
-        <li class="recipe-title"><%= link_to title(recipe.name), recipe %></a></li>
-        <li class="recipe-ingredients"><b>Ingredients</b>: <i><%= ingredient_list recipe.ingredients %></i></li>
-      </ul>
+      <%= link_to(recipe) do %>
+        <ul class="recipe">
+          <li class="recipe-thumbnail"><%= square_image recipe.image_name %></li>
+          <li class="recipe-title"><%= title(recipe.name) %></li>
+          <li class="recipe-ingredients"><i><%= ingredient_list recipe.ingredients %></i></li>
+        </ul>
+      <% end %>
     <% end %>
   </ul>
   <% else %>
