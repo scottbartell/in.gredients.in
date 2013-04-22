@@ -1,28 +1,27 @@
 <p id="notice"><%= notice %></p>
+<div id="recipe" itemscope itemtype="http://schema.org/Recipe">
+  <h1 itemprop="name"><%= @recipe.name %></h1>
+  <p>
+    <% if @recipe.published_at %>
+      Posted <%= time_tag @recipe.published_at, time_ago_in_words(@recipe.published_at), itemprop: 'datePublished' %> ago
+    <% end %>
+    <% if @recipe.source.name %>
+      by <%= link_to @recipe.source.name.titleize, @recipe.source_url, rel: 'nofollow', itemprop: 'author'%>
+    <% end %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
+  <%= recipe_image @recipe.image_name, @recipe.name %>
 
-<p>
-  <strong>Permalink:</strong>
-  <%= @recipe.permalink %>
-</p>
+  <p class="rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+    <b itemprop="ratingValue"><%= @recipe.base_rating %></b> / <span itemprop="bestRating">100</span>
+  </p>
 
-<p>
-  <strong>Image name:</strong>
-  <%= @recipe.image_name %>
-</p>
+  <h2>Ingredients</h2>
 
-<p>
-  <strong>Base rating:</strong>
-  <%= @recipe.base_rating %>
-</p>
-
-<p>
-  <strong>Source url:</strong>
-  <%= @recipe.source_url %>
-</p>
-
-<%= link_to 'Back', recipes_path %>
+  <ul>
+    <% @recipe.ingredients.each do |i| %>
+    <li itemprop="ingredients"><%= i.amount %> <%= i.unit %> <%= i.name %></li>
+    </li>
+    <% end %>
+  </ul>
+</div>
