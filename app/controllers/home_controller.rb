@@ -9,7 +9,14 @@ class HomeController < ApplicationController
 
 
   def recipes_by_items
-    @items.map {|item| item.recipes}.flatten
+    recipes = []
+    @items.each do |item|
+      recipes << item.recipes
+      if recipes.flatten.length > 20
+        break
+      end
+    end
+    @recipes = recipes.flatten
   end
 
   private
