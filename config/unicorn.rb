@@ -7,7 +7,7 @@ listen "/tmp/unicorn_ing_production.sock", :backlog => 64
 
 preload_app true
 
-pid "tmp/unicorn.ing_production.pid"
+pid "/tmp/unicorn.ing_production.pid"
 
 
 # Production specific settings
