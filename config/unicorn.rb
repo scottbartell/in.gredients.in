@@ -1,14 +1,21 @@
+# Set environment to development unless something else is specified
 env = ENV["RAILS_ENV"] || "development"
 
+# See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
+# documentation.
 worker_processes 1
 
-# use a shorter backlog for quicker failover when busy
-listen "/tmp/unicorn_ing_production.sock", :backlog => 64
+# listen on both a Unix domain socket and a TCP port,
+# we use a shorter backlog for quicker failover when busy
+listen "/tmp/ing_production.socket", :backlog => 64
 
+# Preload our app for more speed
 preload_app true
 
-pid "/tmp/unicorn.ing_production.pid"
+# nuke workers after 30 seconds instead of 60 seconds (the default)
+timeout 30
 
+pid "/tmp/unicorn.ing_production.pid"
 
 # Production specific settings
 if env == "production"
@@ -23,7 +30,6 @@ if env == "production"
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"
 end
-
 
 before_fork do |server, worker|
   # the following is highly recomended for Rails + "preload_app true"
