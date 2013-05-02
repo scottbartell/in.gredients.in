@@ -1,0 +1,54 @@
+// CSS Reset
+@import "components/normalize";
+
+// Globals
+@import "font-awesome";
+@import "globals/variables";
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+  
+html {
+  min-height: 100%;
+  background-color: $lighter-green;
+  box-shadow: inset 0 0 100px hsla(0,0,0,.3);
+}
+
+body, form, button {
+  font-family: $sans-font;
+  color: $text-color;
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid $green;
+  }
+}
+  
+#logo {
+  font-size: 75px;
+  margin: 150px auto 50px;
+  text-align: center;
+  color: $light-green;
+  opacity: .9;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  a {
+    font-family: $cursive-font;
+    text-decoration: none;
+    color: $light-green;
+  }
+}
+
+// Pages
+@import "home";
+@import "recipes";
+@import "scaffolds";

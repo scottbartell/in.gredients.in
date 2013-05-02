@@ -1,45 +1,15 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@import "font-awesome";
-
-* {
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Oxygen', sans-serif;
-  color: #59685b;
-}
-  
-html {
-  min-height: 100%;
-  background-color: #dde4de;
-  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
-}
-  
-#logo {
-  font-size: 75px;
-  margin: 150px auto 50px;
-  text-align: center;
-  color: #8fa793;
-  opacity: .9;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  a {
-    font-family: 'Condiment', cursive;
-    text-decoration: none;
-    color: #8fa793;
-  }
-}
-
 #search {
   width: 360px;
   margin: auto;
+  color: $text-color;
+}
+
+#search-bar {
+  font-family: $sans-font;
+  color: $text-color;
 }
 
 #search-bar{
-  /*background-color: #dde4de;*/
   opacity: .9;
   padding: 7px 10px;
   font-size: 1.1em;
@@ -101,6 +71,10 @@ input:focus {
   padding: 0px;
   margin: 40px 0px 0px;
   overflow: auto;
+
+  a {
+    color: $text-color;
+  }
 }
 
 ul.recipe {
