@@ -27,10 +27,10 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 
 default_environment["RAILS_ENV"] = 'production'
 
-# Use our ruby-1.9.2-p290@ing_production gemset
-default_environment["PATH"]         = "--"
-default_environment["GEM_HOME"]     = "--"
-default_environment["GEM_PATH"]     = "--"
+# Use ruby-2.0.0-p0@ing_production gemset
+default_environment["PATH"]         = "/home/deployer/.rvm/gems/ruby-2.0.0-p0@ing_production/bin:/home/deployer/.rvm/gems/ruby-2.0.0-p0@global/bin:/home/deployer/.rvm/rubies/ruby-2.0.0-p0/bin:/home/deployer/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/rvm/bin"
+default_environment["GEM_HOME"]     = "/home/deployer/.rvm/gems/ruby-2.0.0-p0@ing_production"
+default_environment["GEM_PATH"]     = "/home/deployer/.rvm/gems/ruby-2.0.0-p0@ing_production:/home/deployer/.rvm/gems/ruby-2.0.0-p0@global"
 default_environment["RUBY_VERSION"] = "ruby-2.0.0p0"
 
 default_run_options[:shell] = 'bash'
